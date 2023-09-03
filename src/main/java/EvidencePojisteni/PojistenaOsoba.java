@@ -6,6 +6,7 @@ public class PojistenaOsoba {
     private int vek;
     private String telefoniCislo;
 
+
     public PojistenaOsoba(String jmeno, String prijmeni, int vek, String telefoniCislo) {
         this.jmeno = jmeno;
         this.prijmeni = prijmeni;
@@ -14,10 +15,12 @@ public class PojistenaOsoba {
     }
 
     public String getJmeno() {
+
         return jmeno;
     }
 
     public String getPrijmeni() {
+
         return prijmeni;
     }
 

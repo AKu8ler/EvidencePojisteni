@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+
 public class SeznamPojistenych {
     private List<PojistenaOsoba> seznamPojistenych;
 
@@ -45,5 +49,19 @@ public class SeznamPojistenych {
         if (!nalezeno) {
             System.out.println("Osoba nebyla nalezena.");
         }
+    }
+
+    public void smazatPojistenouOsobu(String telefoniCisloProSmazaniOsoby) {
+        Iterator<PojistenaOsoba> iterator = seznamPojistenych.iterator();
+        while (iterator.hasNext()) {
+            PojistenaOsoba osoba = iterator.next();
+            if (osoba.getTelefoniCislo().equals(telefoniCisloProSmazaniOsoby)) {
+                iterator.remove(); // Odstraní osobu se shodným identifikátorem.
+                System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " byla smazána.");
+                return; // Po smazání osoby ukončíme metodu.
+            }
+        }
+        // Pokud nebyla žádná osoba se shodným identifikátorem nalezena.
+        System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " nebyla nalezena.");
     }
 }
