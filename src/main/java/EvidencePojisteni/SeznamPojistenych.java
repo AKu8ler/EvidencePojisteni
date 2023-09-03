@@ -35,17 +35,16 @@ public class SeznamPojistenych {
             }
         }
     }
-
+    // metoda pro vyhledavaní v listu seznamPojistenych
     public void vyhledavaniPodleJmena(String jmeno, String prijmeni) {
         boolean nalezeno = false;
         for (PojistenaOsoba osoba : seznamPojistenych) {
             if (osoba.getJmeno().equalsIgnoreCase(jmeno) && osoba.getPrijmeni().equalsIgnoreCase(prijmeni)) {
                 System.out.println("Výsledek vyhledávání: " + osoba);
                 nalezeno = true;
-                break; // Zastavit hledání po nalezení první shody.
             }
         }
-
+        //negace pro možnost nenalezeni telefoniho čisla
         if (!nalezeno) {
             System.out.println("Osoba nebyla nalezena.");
         }
