@@ -15,16 +15,18 @@ import java.util.List;
 import java.util.Iterator;
 
 public class SeznamPojistenych {
+
     private List<PojistenaOsoba> seznamPojistenych;
 
     public SeznamPojistenych() {
         seznamPojistenych = new ArrayList<>();
     }
-
+    // metoda pro pridani osoby
     public void prijdeOsobu(PojistenaOsoba osoba) {
         seznamPojistenych.add(osoba);
     }
 
+    // metoda pro vypis pojistenych osob
     public void vypisPojisteneOsoby() {
         if (seznamPojistenych.isEmpty()) {
             System.out.println("Seznam pojištěných osob je prázdný.");
@@ -50,6 +52,7 @@ public class SeznamPojistenych {
         }
     }
 
+    // metoda pro vymazani osoby z seznamu pojistechyn osob
     public void smazatPojistenouOsobu(String telefoniCisloProSmazaniOsoby) {
         Iterator<PojistenaOsoba> iterator = seznamPojistenych.iterator();
         while (iterator.hasNext()) {
