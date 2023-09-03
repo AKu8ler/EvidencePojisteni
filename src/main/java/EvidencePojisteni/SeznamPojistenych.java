@@ -56,12 +56,14 @@ public class SeznamPojistenych {
         while (iterator.hasNext()) {
             PojistenaOsoba osoba = iterator.next();
             if (osoba.getTelefoniCislo().equals(telefoniCisloProSmazaniOsoby)) {
-                iterator.remove(); // Odstraní osobu se shodným identifikátorem.
+                iterator.remove(); // Odstraní osobu se shodným telCislen.
                 System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " byla smazána.");
-                return; // Po smazání osoby ukončíme metodu.
+            }
+            else {
+                System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " nebyla nalezena.");
+
             }
         }
-        // Pokud nebyla žádná osoba se shodným identifikátorem nalezena.
-        System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " nebyla nalezena.");
+
     }
 }

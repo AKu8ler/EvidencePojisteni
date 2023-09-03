@@ -18,16 +18,10 @@ public class PojistenaOsoba {
 
         return jmeno;
     }
-
     public String getPrijmeni() {
 
         return prijmeni;
     }
-
-    public int getVek() {
-        return vek;
-    }
-
     public String getTelefoniCislo() {
         return telefoniCislo;
     }
