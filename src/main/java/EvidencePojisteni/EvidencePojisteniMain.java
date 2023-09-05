@@ -11,7 +11,7 @@ public class EvidencePojisteniMain {
         SeznamPojistenych seznamPojistenych = new SeznamPojistenych();
         Scanner scanner = new Scanner(System.in);
 
-        // "interface" uvod do aplikace
+        // uvod do aplikace
         System.out.println("---------------------------");
         System.out.println("Evidence pojištěných");
         System.out.println("---------------------------");
