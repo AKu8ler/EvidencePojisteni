@@ -17,12 +17,14 @@ public class EvidencePojisteniMain {
 
         // Cyklus pro opakované používání operací
         while (true) {
+            System.out.println();
             System.out.println("1. Přidat osobu");
             System.out.println("2. Vypsat všechny pojištěné osoby");
             System.out.println("3. Vyhledat osobu podle jména");
             System.out.println("4. Odstranění osoby podle telefonního čísla");
             System.out.println("5. Ukončit..");
             System.out.printf("Volba:");
+            System.out.println();
 
             int volba = -1; // Inicializace na neplatnou hodnotu
 
@@ -53,6 +55,7 @@ public class EvidencePojisteniMain {
 
                     case 2: // Výpis seznamu pojištěných osob
                         seznamPojistenych.vypisPojisteneOsoby();
+                        System.out.println();
                         break;
 
                     case 3: // Hledání v seznamu podle jména a příjmení
