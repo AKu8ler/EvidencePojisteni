@@ -2,17 +2,8 @@ package EvidencePojisteni;
 
 
 import java.util.ArrayList;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 
 public class SeznamPojistenych {
 
@@ -21,12 +12,13 @@ public class SeznamPojistenych {
     public SeznamPojistenych() {
         seznamPojistenych = new ArrayList<>();
     }
-    // metoda pro pridani osoby
+
+    // Metoda pro přidání osoby do seznamu pojistěných osob.
     public void prijdeOsobu(PojistenaOsoba osoba) {
         seznamPojistenych.add(osoba);
     }
 
-    // metoda pro vypis pojistenych osob
+    // Metoda pro výpis pojistěných osob.
     public void vypisPojisteneOsoby() {
         if (seznamPojistenych.isEmpty()) {
             System.out.println("Seznam pojištěných osob je prázdný.");
@@ -37,7 +29,8 @@ public class SeznamPojistenych {
             }
         }
     }
-    // metoda pro vyhledavaní v listu seznamPojistenych
+
+    // Metoda pro vyhledání osob podle jména a příjmení.
     public void vyhledavaniPodleJmena(String jmeno, String prijmeni) {
         boolean nalezeno = false;
         for (PojistenaOsoba osoba : seznamPojistenych) {
@@ -46,26 +39,27 @@ public class SeznamPojistenych {
                 nalezeno = true;
             }
         }
-        //negace pro možnost nenalezeni telefoniho čisla
         if (!nalezeno) {
             System.out.println("Osoba nebyla nalezena.");
         }
     }
 
-    // metoda pro vymazani osoby z seznamu pojistechyn osob
+    // Metoda pro smazání pojistěné osoby podle telefonního čísla.
     public void smazatPojistenouOsobu(String telefoniCisloProSmazaniOsoby) {
         Iterator<PojistenaOsoba> iterator = seznamPojistenych.iterator();
+        boolean nalezene = false;
+
         while (iterator.hasNext()) {
             PojistenaOsoba osoba = iterator.next();
             if (osoba.getTelefoniCislo().equals(telefoniCisloProSmazaniOsoby)) {
-                iterator.remove(); // Odstraní osobu se shodným telCislen.
+                iterator.remove();
+                nalezene = true;
                 System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " byla smazána.");
-            }
-            else {
-                System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " nebyla nalezena.");
-
             }
         }
 
+        if (!nalezene) {
+            System.out.println("Pojištěná osoba s telefoním číslem: " + telefoniCisloProSmazaniOsoby + " nebyla nalezena.");
+        }
     }
 }

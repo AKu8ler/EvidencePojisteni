@@ -7,7 +7,7 @@ public class PojistenaOsoba {
     private int vek;
     private String telefoniCislo;
 
-
+    // Konstruktor pro inicializaci údajů o osobě.
     public PojistenaOsoba(String jmeno, String prijmeni, int vek, String telefoniCislo) {
         this.jmeno = jmeno;
         this.prijmeni = prijmeni;
@@ -15,19 +15,22 @@ public class PojistenaOsoba {
         this.telefoniCislo = telefoniCislo;
     }
 
-    //gettery / settery
+    // Getter pro získání jména osoby.
     public String getJmeno() {
-
         return jmeno;
     }
-    public String getPrijmeni() {
 
+    // Getter pro získání příjmení osoby.
+    public String getPrijmeni() {
         return prijmeni;
     }
+
+    // Getter pro získání telefonního čísla osoby.
     public String getTelefoniCislo() {
         return telefoniCislo;
     }
-// vypis osoby s udaji
+
+    // Přetížená metoda toString pro výpis údajů o osobě.
     @Override
     public String toString() {
         return "Jméno: " + jmeno + " " + prijmeni + ", Věk: " + vek + ", Telefonní číslo: " + telefoniCislo;
